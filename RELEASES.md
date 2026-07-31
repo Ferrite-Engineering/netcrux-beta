@@ -6,6 +6,51 @@ is also where the download links are posted while the beta is opening up.
 
 ---
 
+## 0.5.0 — 2026-07-31
+
+The release where NetCrux grew the instrumentation to tell you what it is
+doing and how hard it is working — plus a Windows fix that unblocks anyone
+who installed Yosys and found NetCrux could not see it.
+
+### New
+
+- **A live statistics strip.** Real-time layout timing while a schematic is
+  being placed, so a slow elaboration is legible instead of a spinner.
+- **The elaboration indicator names the running Yosys pass**, so you can see
+  where a long elaboration is actually spending its time.
+- **App Diagnostics.** NetCrux had no app-level diagnostics surface at all;
+  it now has one, with memory and frame sections and a Pane Render Stats
+  popover, reachable from the menu.
+- **An Acknowledgments page** in the About box listing every third-party
+  license NetCrux ships.
+
+### Fixed
+
+- **Yosys is found on Windows.** NetCrux now augments the persistent PATH to
+  locate the executable, instead of failing to find an installed Yosys.
+- **Quit works from every route.** The menu item did nothing on some screens.
+- **A sensible minimum window size** (800×500) on macOS, Windows and Linux,
+  so the layout can no longer be crushed into an unusable state.
+
+### Also
+
+- **One consistent suite.** The menu bar, toolbar, status bar and Settings are
+  now shared components across all four apps, and panels moved to a
+  VS Code-style dock model: bottom, right and left regions, tabs you can drag
+  between docks, restore bars for collapsed regions, and direction-aware hide
+  controls. The analysis dock goes multi-open — one tab per open analysis. The
+  welcome screen gained an animated app logo and now shows the running
+  version — handy in the browser, where there is no menu bar to check.
+- Other performance and quality enhancements.
+
+> **A note on version numbers.** NetCrux desktop builds shipped as part of the
+> 2026.07 suite beta before this file caught up, and the open-core package
+> version had been left at `0.1.0` by oversight. Both are corrected here: the
+> app reports `0.5.0`, matching its three siblings and the suite release it
+> ships in.
+
+---
+
 ## Unreleased — 0.1.0
 
 The first public beta. Notes land here the day it ships; until then this file is
