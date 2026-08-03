@@ -1,0 +1,48 @@
+{
+  "_comment": "Canonical ProClockDomainAnalysisService.analyze() result for cdc_missing_sync.v. A single-bit signal used across domains with no synchronizer resolves to severity = critical via CdcCrossing.severityFor(kind, missingSynchronizer) (missing-sync is critical for EVERY crossing kind). 2026-07-19 correction (verified against the live service by test/fixtures/cdc_netlist_fixture_sync_test.dart): crossingKind was hand-authored as \"control\" but the live _classifyCrossingKind keys on name suffixes (_en/_enable/_sel/_select/ctrl) and \"enable_a\" matches none, so the shipping value is \"singleBit\"; the severity (critical) is unchanged because missingSynchronizer dominates the matrix. The missing-sync path is detected through combinational logic (the enable mux), so synchronizerInstances carries that comb cell (top.capture_mux), not the previously-committed empty list. The detector emits domain ids \"dom-N\" and bare clock-signal paths (clk_a), not the readable cd_clk_a/top.clk_a shown here — like the sibling cdc_two_domain fixture, ids/paths are documentation, not asserted (see that fixture and the sync test). Maintained in tool/generate_pro_verification_fixtures.dart.",
+  "detectedDomains": [
+    {
+      "id": "cd_clk_a",
+      "clockSignalId": {
+        "kind": "signal",
+        "path": "top.clk_a"
+      },
+      "clockSignalName": "clk_a",
+      "sourceKind": "primaryInput"
+    },
+    {
+      "id": "cd_clk_b",
+      "clockSignalId": {
+        "kind": "signal",
+        "path": "top.clk_b"
+      },
+      "clockSignalName": "clk_b",
+      "sourceKind": "primaryInput"
+    }
+  ],
+  "detectedCrossings": [
+    {
+      "id": "cdc_missing_sync/enable_a",
+      "sourceDomainId": "cd_clk_a",
+      "destinationDomainId": "cd_clk_b",
+      "signalId": {
+        "kind": "signal",
+        "path": "top.enable_a"
+      },
+      "signalName": "enable_a",
+      "crossingKind": "singleBit",
+      "synchronizerStatus": "missingSynchronizer",
+      "severity": "critical",
+      "confidence": "high",
+      "synchronizerInstances": [
+        {
+          "kind": "instance",
+          "path": "top.capture_mux"
+        }
+      ]
+    }
+  ],
+  "expectedCriticalCount": 1,
+  "expectedWarningCount": 0,
+  "expectedInfoCount": 0
+}

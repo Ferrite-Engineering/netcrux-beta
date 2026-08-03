@@ -1,0 +1,24 @@
+{
+  "_comment": "Canonical X-trace back-walk for xtrace_backcone.v. Full X-trace requires a loaded VCD (XTraceRequest.simulationTime); without one the service returns noVcdLoaded. This fixture captures the topological back-cone chain the §4.2 integration test asserts once the design is seeded with a VCD whose X originates at buf1 (foundOrigin). The chain is ordered selection -> origin. Maintained in tool/generate_pro_verification_fixtures.dart.",
+  "selection": {
+    "kind": "port",
+    "portId": "top.q_out"
+  },
+  "terminationTopological": "reachedBoundary",
+  "terminationWithVcd": "foundOrigin",
+  "expectedChain": [
+    {
+      "depth": 0,
+      "signalName": "q_out"
+    },
+    {
+      "depth": 1,
+      "signalName": "buf2"
+    },
+    {
+      "depth": 2,
+      "signalName": "buf1"
+    }
+  ],
+  "expectedOriginSignalName": "buf1"
+}

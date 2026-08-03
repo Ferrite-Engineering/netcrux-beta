@@ -1,0 +1,174 @@
+{
+  "creator": "netcrux-pro tool/generate_pro_verification_fixtures.dart",
+  "modules": {
+    "top": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "cdc_missing_sync.v:15"
+      },
+      "ports": {
+        "clk_a": {
+          "direction": "input",
+          "bits": [
+            1
+          ]
+        },
+        "clk_b": {
+          "direction": "input",
+          "bits": [
+            2
+          ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [
+            3
+          ]
+        },
+        "d_a": {
+          "direction": "input",
+          "bits": [
+            4
+          ]
+        },
+        "q_b": {
+          "direction": "output",
+          "bits": [
+            101
+          ]
+        }
+      },
+      "cells": {
+        "enable_a": {
+          "hide_name": 0,
+          "type": "$dff",
+          "parameters": {
+            "WIDTH": "1",
+            "CLK_POLARITY": "1"
+          },
+          "attributes": {},
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [
+              1
+            ],
+            "D": [
+              4
+            ],
+            "Q": [
+              100
+            ]
+          }
+        },
+        "capture_mux": {
+          "hide_name": 0,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "1"
+          },
+          "attributes": {},
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [
+              101
+            ],
+            "B": [
+              "1"
+            ],
+            "S": [
+              100
+            ],
+            "Y": [
+              110
+            ]
+          }
+        },
+        "capture_b": {
+          "hide_name": 0,
+          "type": "$dff",
+          "parameters": {
+            "WIDTH": "1",
+            "CLK_POLARITY": "1"
+          },
+          "attributes": {},
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [
+              2
+            ],
+            "D": [
+              110
+            ],
+            "Q": [
+              101
+            ]
+          }
+        }
+      },
+      "netnames": {
+        "clk_a": {
+          "hide_name": 0,
+          "bits": [
+            1
+          ],
+          "attributes": {}
+        },
+        "clk_b": {
+          "hide_name": 0,
+          "bits": [
+            2
+          ],
+          "attributes": {}
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [
+            3
+          ],
+          "attributes": {}
+        },
+        "d_a": {
+          "hide_name": 0,
+          "bits": [
+            4
+          ],
+          "attributes": {}
+        },
+        "enable_a": {
+          "hide_name": 0,
+          "bits": [
+            100
+          ],
+          "attributes": {}
+        },
+        "capture_b": {
+          "hide_name": 0,
+          "bits": [
+            101
+          ],
+          "attributes": {}
+        },
+        "q_b": {
+          "hide_name": 0,
+          "bits": [
+            101
+          ],
+          "attributes": {}
+        }
+      }
+    }
+  }
+}

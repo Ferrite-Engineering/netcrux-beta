@@ -1,0 +1,17 @@
+{
+  "_comment": "Expected ProFsmDetectionService.detect() result for simple_binary_fsm.v. The integration test builds a synthetic equivalent of the same netlist directly (running Yosys in tests is out of scope) and asserts the FSM count, encoding, state count, and reset state — see test/features/fsm/fsm_integration_test.dart.",
+  "expectedFsmCount": 1,
+  "expectedCandidateCount": 0,
+  "fsms": [
+    {
+      "stateRegisterName": "state_q",
+      "encoding": "binary",
+      "stateCount": 4,
+      "reachableCount": 4,
+      "unreachableCount": 0,
+      "resetStatePresent": true,
+      "_stateValuesNote": "hexWidth = ((width + 3) ~/ 4).clamp(1, 16); a 2-bit state register formats as 1 hex digit, not zero-padded to 2 — corrected 2026-07-19 while wiring the §5.3 seeded FSM journey (test/fixtures/fsm_netlist_fixture_sync_test.dart) exposed the drift; this field was never asserted by fsm_integration_test.dart before that.",
+      "stateValues": ["0x0", "0x1", "0x2", "0x3"]
+    }
+  ]
+}
