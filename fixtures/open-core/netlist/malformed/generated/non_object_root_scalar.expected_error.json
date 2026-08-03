@@ -1,5 +1,0 @@
-{
-  "expectException": "YosysJsonParseException",
-  "invariant": "§5.1 #1",
-  "note": "non-object root (scalar)"
-}

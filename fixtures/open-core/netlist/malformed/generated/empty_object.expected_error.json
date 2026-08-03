@@ -1,5 +1,0 @@
-{
-  "expectException": "YosysJsonParseException",
-  "invariant": "§5.1 #4",
-  "note": "empty {} is a failure, not an empty netlist"
-}

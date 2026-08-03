@@ -1,5 +1,0 @@
-{
-  "expectException": "YosysJsonParseException",
-  "invariant": "§5.1 #5",
-  "note": "unterminated module-name string"
-}

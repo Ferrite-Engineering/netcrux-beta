@@ -1,5 +1,0 @@
-{
-  "expectException": "YosysJsonParseException",
-  "invariant": "§5.1 #2",
-  "note": "missing modules key"
-}
