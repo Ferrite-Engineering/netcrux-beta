@@ -6,6 +6,36 @@ is also where the download links are posted while the beta is opening up.
 
 ---
 
+## 0.6.0 — 2026-08-04
+
+A small release for NetCrux, which spends this cycle on getting you to a
+netlist faster and on layout behaviour that stopped misbehaving at awkward
+window sizes. The suite's RISC-V work this release lands in WaveCrux, SimCrux
+and LintCrux.
+
+### New
+
+- **Two example projects you can open immediately**, with no capture or setup —
+  and committed projects are now portable, so a project checked into a repo
+  opens on someone else's machine.
+
+### Fixed
+
+- **Every IDE region has a minimum size**, so panes stop collapsing into
+  unusable slivers when you drag a divider too far.
+- **The camera re-aims when the canvas changes size**, instead of leaving your
+  netlist off screen after a resize.
+
+### Also
+
+- **Linux requirements are now measured, not asserted.** Our published glibc
+  figure had drifted from what we actually shipped; every release build now
+  verifies it. NetCrux requires glibc 2.34, which means it runs on RHEL /
+  Rocky / AlmaLinux 9, Ubuntu 22.04+ and Debian 12+.
+- Other performance and quality enhancements.
+
+---
+
 ## 0.5.0 — 2026-07-31
 
 The release where NetCrux grew the instrumentation to tell you what it is
