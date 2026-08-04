@@ -1,0 +1,178 @@
+{
+  "creator": "netcrux-pro tool/generate_pro_verification_fixtures.dart",
+  "modules": {
+    "top": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "cdc_two_domain_2ff.v:19"
+      },
+      "ports": {
+        "clk_a": {
+          "direction": "input",
+          "bits": [
+            1
+          ]
+        },
+        "clk_b": {
+          "direction": "input",
+          "bits": [
+            2
+          ]
+        },
+        "rst_n": {
+          "direction": "input",
+          "bits": [
+            3
+          ]
+        },
+        "d_a": {
+          "direction": "input",
+          "bits": [
+            4
+          ]
+        },
+        "q_b": {
+          "direction": "output",
+          "bits": [
+            102
+          ]
+        }
+      },
+      "cells": {
+        "flag_a": {
+          "hide_name": 0,
+          "type": "$dff",
+          "parameters": {
+            "WIDTH": "1",
+            "CLK_POLARITY": "1"
+          },
+          "attributes": {},
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [
+              1
+            ],
+            "D": [
+              4
+            ],
+            "Q": [
+              100
+            ]
+          }
+        },
+        "sync_meta": {
+          "hide_name": 0,
+          "type": "$dff",
+          "parameters": {
+            "WIDTH": "1",
+            "CLK_POLARITY": "1"
+          },
+          "attributes": {},
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [
+              2
+            ],
+            "D": [
+              100
+            ],
+            "Q": [
+              101
+            ]
+          }
+        },
+        "sync_stable": {
+          "hide_name": 0,
+          "type": "$dff",
+          "parameters": {
+            "WIDTH": "1",
+            "CLK_POLARITY": "1"
+          },
+          "attributes": {},
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [
+              2
+            ],
+            "D": [
+              101
+            ],
+            "Q": [
+              102
+            ]
+          }
+        }
+      },
+      "netnames": {
+        "clk_a": {
+          "hide_name": 0,
+          "bits": [
+            1
+          ],
+          "attributes": {}
+        },
+        "clk_b": {
+          "hide_name": 0,
+          "bits": [
+            2
+          ],
+          "attributes": {}
+        },
+        "rst_n": {
+          "hide_name": 0,
+          "bits": [
+            3
+          ],
+          "attributes": {}
+        },
+        "d_a": {
+          "hide_name": 0,
+          "bits": [
+            4
+          ],
+          "attributes": {}
+        },
+        "flag_a": {
+          "hide_name": 0,
+          "bits": [
+            100
+          ],
+          "attributes": {}
+        },
+        "sync_meta": {
+          "hide_name": 0,
+          "bits": [
+            101
+          ],
+          "attributes": {}
+        },
+        "sync_stable": {
+          "hide_name": 0,
+          "bits": [
+            102
+          ],
+          "attributes": {}
+        },
+        "q_b": {
+          "hide_name": 0,
+          "bits": [
+            102
+          ],
+          "attributes": {}
+        }
+      }
+    }
+  }
+}

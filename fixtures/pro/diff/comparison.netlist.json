@@ -1,0 +1,134 @@
+{
+  "creator": "netcrux-pro (hand-authored diff netlist sidecar, see verification/fixtures/diff/README.md)",
+  "modules": {
+    "top": {
+      "attributes": {
+        "top": "1"
+      },
+      "ports": {
+        "in_a": {
+          "direction": "input",
+          "bits": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+        },
+        "in_clk": {
+          "direction": "input",
+          "bits": [17]
+        },
+        "out_y": {
+          "direction": "output",
+          "bits": [18]
+        }
+      },
+      "cells": {
+        "alu_inst": {
+          "hide_name": 0,
+          "type": "u_alu",
+          "parameters": {},
+          "attributes": {},
+          "port_directions": {
+            "a": "input",
+            "clk": "input",
+            "y": "output"
+          },
+          "connections": {
+            "a": [1, 2, 3, 4, 5, 6, 7, 8],
+            "clk": [17],
+            "y": [18]
+          }
+        },
+        "dma_inst": {
+          "hide_name": 0,
+          "type": "u_dma",
+          "parameters": {},
+          "attributes": {},
+          "port_directions": {
+            "clk": "input",
+            "data": "input"
+          },
+          "connections": {
+            "clk": [17],
+            "data": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+          }
+        }
+      },
+      "netnames": {
+        "in_a": {
+          "hide_name": 0,
+          "bits": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+          "attributes": {}
+        },
+        "in_clk": {
+          "hide_name": 0,
+          "bits": [17],
+          "attributes": {}
+        },
+        "out_y": {
+          "hide_name": 0,
+          "bits": [18],
+          "attributes": {}
+        }
+      }
+    },
+    "u_alu": {
+      "attributes": {},
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        "clk": {
+          "direction": "input",
+          "bits": [9]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [10]
+        }
+      },
+      "cells": {},
+      "netnames": {
+        "a": {
+          "hide_name": 0,
+          "bits": [1, 2, 3, 4, 5, 6, 7, 8],
+          "attributes": {}
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [9],
+          "attributes": {}
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [10],
+          "attributes": {}
+        }
+      }
+    },
+    "u_dma": {
+      "attributes": {},
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [1]
+        },
+        "data": {
+          "direction": "input",
+          "bits": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+        }
+      },
+      "cells": {},
+      "netnames": {
+        "clk": {
+          "hide_name": 0,
+          "bits": [1],
+          "attributes": {}
+        },
+        "data": {
+          "hide_name": 0,
+          "bits": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+          "attributes": {}
+        }
+      }
+    }
+  }
+}

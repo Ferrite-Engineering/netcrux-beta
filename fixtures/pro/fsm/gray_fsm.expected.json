@@ -1,0 +1,17 @@
+{
+  "_comment": "Expected ProFsmDetectionService.detect() result for gray_fsm.v.",
+  "expectedFsmCount": 1,
+  "expectedCandidateCount": 0,
+  "fsms": [
+    {
+      "stateRegisterName": "state_q",
+      "encoding": "gray",
+      "stateCount": 3,
+      "reachableCount": 3,
+      "unreachableCount": 0,
+      "resetStatePresent": true,
+      "_stateValuesNote": "hexWidth = ((width + 3) ~/ 4).clamp(1, 16); a 2-bit state register formats as 1 hex digit, not zero-padded to 2 — corrected 2026-07-19, see simple_binary_fsm.expected.json's note.",
+      "stateValues": ["0x0", "0x1", "0x3"]
+    }
+  ]
+}
