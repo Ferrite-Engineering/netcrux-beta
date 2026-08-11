@@ -6,6 +6,48 @@ is also where the download links are posted while the beta is opening up.
 
 ---
 
+## 0.7.0 — 2026-08-11
+
+A quiet release for NetCrux: one file that opens a design across the whole
+suite, a shorter route from a schematic element to the RTL behind it, and a
+reset-domain fix that is worth re-running your designs for.
+
+### New
+
+- **One file opens a design in all four products.** Write a `.crux-project`
+  manifest at the root of your design — naming the dump, the RTL, the lint
+  project and the regression config — check it in next to the RTL, and open it
+  in any Crux product. NetCrux loads the `netlist` artifact when the manifest
+  names one and otherwise elaborates `design.sources` directly. All four
+  products derive the same design identity from it, so cross-probing works
+  exactly as it does when you open each file by hand. Every path resolves
+  against the manifest's own directory, so the file travels with the
+  repository, and everything except `version` is optional. Open Core in all
+  four products.
+- **Go to source, from the Inspector.** The action already existed on the
+  schematic context menu, but the Inspector is where someone reading an
+  element's details actually forms the question. It is a button there now,
+  rather than a reason to dismiss the panel and right-click the canvas.
+
+### Fixed
+
+- **A synchronous reset is recognized as a reset (Pro).** Reset-domain analysis
+  knew every asynchronous reset alias Yosys emits and none of the synchronous
+  one — `$sdff`'s `SRST` port was missing from the list that discovers a
+  domain's members. The consequence was worse than a mislabelled synchronicity:
+  a synchronously reset register looked like a register with **no reset at
+  all**, so it joined no domain, no crossing analysis ran across it, and it
+  drew a false "unreset register" warning against a flop that resets perfectly
+  well. Synchronicity is now reported per domain, and a design that mixes the
+  two shows both. **If your designs use synchronous resets, re-run the
+  reset-domain analysis on this build.**
+
+### Also
+
+- Other performance and quality enhancements.
+
+---
+
 ## 0.6.0 — 2026-08-04
 
 A small release for NetCrux, which spends this cycle on getting you to a
