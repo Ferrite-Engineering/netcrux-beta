@@ -6,6 +6,23 @@ is also where the download links are posted while the beta is opening up.
 
 ---
 
+## 0.8.0 — 2026-08-16
+
+A maintenance release, cut with the rest of the suite so all four products stay
+on one version.
+
+### Fixed
+
+- **Opening a file no longer breaks on macOS.** A file-picker dependency
+  update turned every Open File into a plugin error; backed out and pinned, in
+  all four products.
+
+### Also
+
+- Other performance and quality enhancements.
+
+---
+
 ## 0.7.0 — 2026-08-11
 
 A quiet release for NetCrux: one file that opens a design across the whole
