@@ -38,7 +38,7 @@ point for the beta:
 > (No Discord or Slack — Discussions keeps every answer searchable and in one
 > place.)
 
-NetCrux is part of the **EDA Crux** suite and cross-probes with its siblings over
+NetCrux is part of the **EDACrux** suite and cross-probes with its siblings over
 CXP. Their betas run the same way:
 [WaveCrux](https://github.com/Ferrite-Engineering/wavecrux-beta) ·
 [LintCrux](https://github.com/Ferrite-Engineering/lintcrux-beta) ·
