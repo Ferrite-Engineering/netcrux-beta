@@ -1,5 +1,14 @@
 # NetCrux Beta
 
+> **The public beta has ended.** NetCrux 1.0 was released on 30 September 2026,
+> and this repository is archived as the record of the beta.
+>
+> - Source code, issues and discussions: https://github.com/Ferrite-Engineering/netcrux
+> - Release notes: https://github.com/Ferrite-Engineering/netcrux/releases
+> - Download: https://netcrux.app/download
+>
+> Thank you to everyone who tested the beta and reported what they found.
+
 Welcome to the home of the **NetCrux public beta** — this is where you report
 bugs, request features, get help, and browse the test-fixture corpus NetCrux is
 validated against.
